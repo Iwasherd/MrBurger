@@ -1,0 +1,93 @@
+.reviews{
+    min-height: 650px;
+    height: 100vh;
+    min-width: 950px;
+    width: 100%;
+}
+
+.reviews__photo_box{
+    position: relative;
+    width: 25%;
+    min-width: 275px;
+    height: 50vh;
+    min-height: 325px;
+}
+
+
+
+.reviews__photo{
+    width: 100%;
+    min-width: 275px;
+    height: 100%;
+    min-height: 325px;
+    margin: 0;
+    filter: grayscale(100%);
+}
+.reviews__photo_layer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+}
+
+.reviews__content_list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    margin-left: -7%;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+.reviews__content_list:hover{
+    content: "";
+    opacity: 0.6;
+}
+
+.reviews__content_name{
+    font-family: 'gagalinregular';
+    font-size: 14px;
+    margin: 17.2% 8% 7% 8%;
+    display: flex;
+    color: #dedede;
+}
+.reviews__content_text{
+    font-family: "ubunturegular";
+    font-size: 14px;
+    margin-top: 0%;
+    margin-left: 8%;
+    line-height: 1.74em;
+    color: #dedede;
+
+}
+
+.reviews__content_link-box{
+    width: 110px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #2f3234;
+    margin-left: 8%;
+    margin-top: 5%; 
+}
+.reviews__content_link:hover{
+    background-color: #1f2122;
+}
+
+.reviews__content_link{
+    width: 110px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #2f3234;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.reviews__content_link-text{
+    color: #dedede;
+}
