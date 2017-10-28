@@ -1,0 +1,67 @@
+.best{
+    
+        background: url('../images/best/Rectangle 1.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        min-height: 650px;
+        height: 100vh;
+        min-width: 950px;
+        width: 100%;
+}
+    
+.best__title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'gagalinregular';
+        font-size: 72px;
+        padding: 60px 0 0 5px;
+        color: #2f3234;
+        margin: 0;
+    
+}
+.best__info-list{
+        display: flex;
+        align-items: center;
+        padding: 50px 86px 0 47px;
+}
+.best__info-item{
+        list-style: none;
+        width: 33%;
+        flex: 1 0 auto;
+        display: flex;
+        align-self: baseline;
+}
+.best__info-box{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+}
+.best__info-title{
+        font-family: 'lifehackmedium';
+        font-size: 23.1px;
+        padding-top: 8%;
+        /* padding-right: 0px; */
+        /* letter-spacing: 0; */
+        width: 80%;
+        text-align: center;
+        line-height: 29px;
+        height: 22%;
+    
+    
+}
+.best__info-text{
+        font-family: 'ubuntulight';
+        font-size: 14px;
+        color: #575959;
+        text-align: center;
+        line-height: 24px;
+        width: 102%;
+        padding-top: 6%;
+    
+    
+}
+    
+    
