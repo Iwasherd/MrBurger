@@ -7,4 +7,5 @@
 
 ***Курс*** веб для начинающих(10.2017)
 
-***Сайт*** https://github.com/Iwasherd/MrBurger
+***Сайт*** https://iwasherd.github.io/MrBurger/
+
