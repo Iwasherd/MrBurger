@@ -46,8 +46,7 @@
 .order{
     align-items: center;
     justify-content: center;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-top: 1.8%;
     
 
 }
@@ -59,30 +58,33 @@
 
 
 }
-.order__box{
+.order__button{
     width: 7.462em;
     height: 2.692em;
-    background: #e45028;
+    background: $orange;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+        &:hover{
+            background: darken($color: $orange, $amount: 10%);
+            transition: .3s;
+            transform: scale(1.05) translate3d(0,0,0);
+            @include shadow(1);
+        }
 }
-.order__box:hover{
-   background: #c1401e;
-   transition: .5s;
-}
+
 .greting{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 72%;
 }
-.greting__icon{
+.burger-block__img{
     margin-top: -15%;
     margin-left: 3%;
 }
-.greting__icon-box{
+.greting__burger-block{
     background: url(../images/firstpage/drops.png) no-repeat;
     margin-left: 2%;
     width: 457px;
@@ -98,16 +100,16 @@
     align-items: center;
     flex: 1 1 auto;;
 }
-.greting__text-title{
+.text__title{
     font-family: 'gagalinregular';
     font-size: 69px;
-    color: #f9b43b;
+    color: $yellow;
     letter-spacing: 0.029em;
     margin-bottom: -48px;
     margin-top: 71px;
 
 }
-.greting__text-item{
+.text__item{
     font-family: 'lifehackmedium';
     font-size: 62px;
     color: #ffffff;
@@ -124,7 +126,7 @@
     background-repeat: no-repeat;
     height: 15px;
     width: 30px;
-    margin-top: 4%;
+    margin-top: 4.4%;
     margin-right: -7px;
     
     

@@ -1,4 +1,11 @@
-$orange: #e25028;
-$yellow: #f8b43a;
+$orange: #e45028;
+$yellow: #f9b43b;
 $green: #8ac03e;
 $dark: #2f3234;
+$white: #ffffff;
+
+
+@mixin shadow($depth) {
+    box-shadow: 0 0 ($depth * 8px) 0 rgba(0,0,0,0.2),
+    ($depth * 2px) ($depth * 4px) ($depth * 4px) 0 rgba(0,0,0,0.25);
+  }

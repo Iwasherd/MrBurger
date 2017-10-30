@@ -1,93 +1,94 @@
-.reviews{
+
+.container--reviews{
     min-height: 650px;
     height: 100vh;
     min-width: 950px;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
 }
 
-.reviews__photo_box{
-    position: relative;
+.reviews__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.userpic-list__item{
+    list-style: none;
     width: 25%;
     min-width: 275px;
     height: 50vh;
     min-height: 325px;
-}
-
-
-
-.reviews__photo{
-    width: 100%;
-    min-width: 275px;
-    height: 100%;
-    min-height: 325px;
     margin: 0;
+    padding: 0;
     filter: grayscale(100%);
-}
-.reviews__photo_layer{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
+
 
 }
 
-.reviews__content_list{
-    position: absolute;
-    top: 0;
-    left: 0;
+.userpic-item__list{
     list-style: none;
-    margin-left: -7%;
     width: 100%;
     height: 100%;
     background: black;
     opacity: 0;
     padding: 0;
-    margin: 0;
-}
-.reviews__content_list:hover{
-    content: "";
-    opacity: 0.6;
+    margin-top: -17.1%;
+    &:hover{
+        content: "";
+        opacity: 0.6;
+        transition: .5s;
+    }
 }
 
-.reviews__content_name{
+.content-name{
     font-family: 'gagalinregular';
     font-size: 14px;
-    margin: 17.2% 8% 7% 8%;
     display: flex;
-    color: #dedede;
+    color: $white;
+    padding-top: 47px;
+    margin-left: 19px;
+    margin-top: 17.1%;
 }
-.reviews__content_text{
+.content-text{
     font-family: "ubunturegular";
+    width: 85%;
     font-size: 14px;
-    margin-top: 0%;
-    margin-left: 8%;
+    margin-left: 18px;
+    margin-top: 20px;
     line-height: 1.74em;
-    color: #dedede;
+    color: $white;
 
 }
 
-.reviews__content_link-box{
+.content-button{
     width: 110px;
     height: 35px;
     border-radius: 3px;
-    background-color: #2f3234;
-    margin-left: 8%;
-    margin-top: 5%; 
-}
-.reviews__content_link:hover{
-    background-color: #1f2122;
+    background-color: $dark;
+    margin-left: 7%;
+    margin-top: 4%; 
 }
 
-.reviews__content_link{
+.content-button__link{
     width: 110px;
     height: 35px;
     border-radius: 5px;
-    background-color: #2f3234;
+    background-color: $dark;
+    color: $white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-}
-
-.reviews__content_link-text{
-    color: #dedede;
+        &:hover{
+            background-color: darken($color: $dark, $amount: 10%);
+            transition: 0.5s;
+            color: $white;
+            
+        }
 }
