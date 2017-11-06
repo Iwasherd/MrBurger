@@ -1,0 +1,232 @@
+.team{
+    background: url('../images/team/background.jpg') no-repeat;
+    min-height: rem(650px);
+    height: 100vh;
+    min-width: rem(950px);
+    width: 100%;
+    background-size: cover;
+    .text__title{
+        font-weight: normal;
+        @include tablets{
+            text-align: center
+            
+        }
+        @include tablets{
+             text-align: center
+                
+        }
+
+    }
+    @include tablets {
+        min-height: auto;
+    }
+    @include phones{
+        min-height: auto;
+    }
+
+}
+.container--team{
+    width: 100%;
+    min-width: rem(950px);
+    min-height: rem(650px);
+    height: 100vh;
+    position: relative;
+    
+}
+
+.team-page{
+    position: absolute;
+    right: 0;
+    width: 49%;
+    height: 100vh;
+    min-height: rem(650px);
+    background-color: $dark;
+    opacity: 0.9;
+    @include tablets {
+        min-height: auto;
+        width: 100%;
+
+    }
+    @include phones{
+        min-height: auto;
+        width: 100%;
+    }
+
+}
+.team-page__content{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15.5%;
+    padding-top: 2%;
+    @include tablets {
+        padding-left: 0;
+        padding-top: 0;
+    }
+    @include phones{
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+
+}
+.team-accordeon__list{
+    margin-top: 1%;
+    padding-left: 4%;;
+    list-style: none;
+    @include tablets {
+        text-align: center;
+    }
+    @include phones{
+        text-align: center;
+    }
+}
+.accordeon-item__visible{
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 7%;
+
+    @include tablets {
+        display: inline-flex;
+    }
+    @include phones{
+        display: inline-flex;
+    }
+}
+
+.team-visible__content{
+    font-family: gagalinregular;
+    font-size: rem(14px);
+    color: $white;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 37%;
+            left: -5%;
+            border-top: rem(7px) solid #f9b43b;
+            border-right: rem(5px) solid transparent;
+            border-left: rem(5px) solid transparent;
+            border-bottom: rem(0px) solid transparent;
+            transition: 0.3s;
+
+            @include tablets {
+                top: 42%;
+                left: -20%;
+                
+            }
+            @include phones{
+                top: 42%;
+                left: -20%;
+                
+            }
+        }
+        @include tablets {
+            font-size: 16px;
+        }
+        @include phones{
+            font-size: 16px;
+        }
+}
+
+.active{
+    .team-visible__content{
+        font-family: gagalinregular;
+        font-size: rem(14px);
+        color: $yellow;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 37%;
+                left: -5%;
+                border-top: rem(7px) solid #f9b43b;
+                border-right: rem(5px) solid transparent;
+                border-left: rem(5px) solid transparent;
+                border-bottom: rem(0px) solid transparent;
+                transform: rotate(180deg);
+
+                @include tablets {
+                    top: 42%;
+                    left: -20%;
+                }
+                @include phones{
+                    top: 42%;
+                    left: -20%;
+                }
+            }
+            @include tablets {
+                font-size: 16px;
+            }
+            @include phones{
+                font-size: 16px;
+            }
+    }
+}
+.accordeon-item__hidden{
+    display: flex;
+    margin-top: -3%;
+    margin-left: -1%;
+    margin-bottom: 9%;
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+    @include phones{
+        
+    }
+}
+
+.team-hidden__photo{
+    display: inline-block;
+    position: relative;
+    width: rem(100px);
+    height: rem(100px);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5%;
+    @include tablets {
+        margin-right: 0;
+    }
+    @include phones{
+        
+    }
+
+
+}
+
+.team-hidden__photo-hidden{
+    position: absolute;
+    top: -4%;
+    left: -17%;
+    @include tablets {
+        left: -23%;
+    }
+    @include phones{
+        left: -37%;
+    }
+
+
+}
+.team-hidden__content{
+    width: 48%;
+}
+.team-hidden__content-name{
+    font-family: 'ubuntubold';
+    font-size: 14px;
+    color: $white;
+    margin-top: -2px;
+    @include tablets {
+        margin-top: 15px;
+    }
+    @include phones{
+        margin-top: 15px;
+    }
+    
+}
+.team-hidden__content-text{
+    font-family: 'ubuntulight';
+    font-size: 14px;
+    color: $white;
+    margin-top: 15px;
+    line-height: 1.7em;
+
+}

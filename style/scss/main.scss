@@ -1,7 +1,25 @@
 
+@import "config/media";// adaptive
+
+//resolutions
+$tablets: 768px;
+$phones: 480px;
+
+/* base style */
 @import "layout/fonts";
 @import "layout/base";
+
+/*mixins */
 @import "config/variables";
+
+/*sections */
 @import "sections/greting";
 @import "sections/best";
+@import "sections/team";
+@import "sections/burgerslider";
 @import "sections/reviews";
+@import "sections/form";
+@import "sections/map-page";
+@import "sections/menu-page";
+
+

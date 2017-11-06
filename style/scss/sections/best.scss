@@ -1,77 +1,84 @@
 .best{
     
         background: url('../images/best/Rectangle 1.jpg');
-        background-size: 100% 100%;
+        background-size: cover;
         background-repeat: no-repeat;
-        
+        height: 100vh;
+        min-height: 40.625rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+                .text__title{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: -8%;
+                        margin-bottom: 8%;
+                        margin-left: 1.1%;
+                        font-weight: normal;
+        }
 }
 .container--best{
 
-        min-height: 650px;
-        height: 100vh;
-        min-width: 950px;
-        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        max-width: 58.75rem;
+        width: 95%;
         display: flex;
         flex-direction: column;
 
 }
     
-.best__title{
+.best__list{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'gagalinregular';
-        font-size: 72px;
-        color: #2f3234;
-        margin-top: -9.5%;
-        margin-left: 1.1%;
-    
+        @include phones{
+                flex-direction: column;
+        }
 }
 
-.best__content{
-        margin-top: -5.5%;
-}
-
-.content-best__list{
+.best__item{
         display: flex;
         align-items: center;
-        padding: 50px 86px 0 47px;
-}
-.content-best__item {
-        list-style: none;
-        width: 33%;
-        flex: 1 0 auto;
-        display: flex;
-        align-self: baseline;
-}
-.item-content-best__list{
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
+        @include phones {
+                flex-direction: row;
+        }
+        
 }
-.item-content-best__title{
+.best-item__icon {
+        
+        
+        
+}
+.best__icon{
+        list-style: none;
+        
+}
+.best-item__title{
         font-family: 'lifehackmedium';
-        font-size: 23.1px;
-        padding-top: 10%;
-        /* padding-right: 0px; */
-        /* letter-spacing: 0; */
-        width: 80%;
+        font-size: rem(23.1px);
+        font-style: normal;
+        
         text-align: center;
-        line-height: 29px;
-        height: 22%;
+        line-height: rem(29px);
+        &:nth-child(3){
+                padding-top: 9px;
+        }
+        
     
     
 }
-.item-content-best__text{
+.best-item__text{
         font-family: 'ubuntulight';
-        font-size: 14px;
+        font-size: rem(14px);
         color: #575959;
         text-align: center;
-        line-height: 24px;
-        width: 102%;
-        padding-top: 6%;
+        line-height: rem(24px);
+        font-style: normal;
+        width: 86%;
+        
     
     
 }

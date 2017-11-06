@@ -1,0 +1,121 @@
+.menu{
+    background: url('../images/menu/background.jpg') center center / cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 40.625rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+        .text__title{
+            margin-left: 6.2rem;
+            margin-top: 5.7rem;
+            font-weight: normal;
+        }
+}
+
+.menu-acc__list{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.menu-acc__item{
+    min-height: rem(650px);
+    height: 100vh;
+}
+
+.menu-item__visible{
+    width: 5rem;
+    display: block;
+    float: left;
+    height: 100%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+    background-size: cover;
+
+    @include tablets {
+        width: 5rem;
+    }
+    @include phones{
+        width: 3.25rem;
+    }
+    
+    
+    
+}
+.menu-item__visible-title{
+    transform: rotate(-90deg) translateY(-50%);
+    color: $white;
+    width: 1rem;
+    position: absolute;
+    white-space: nowrap;
+    left: 70%;
+    top: 61%;
+    z-index: 9999;
+    padding-bottom: -3rem;
+    font-size: 2.5rem;
+    font-family: 'gagalinregular';
+    text-transform: uppercase;
+    @include tablets {
+        left: 80%;
+    }
+    @include phones{
+        left: 85%;
+    }
+    
+    
+
+        
+}
+
+.menu-item__hidden{
+    height: 100%;
+    float: left;
+    background: rgba(47,50,52,.93);
+
+    overflow: hidden;
+    
+
+}
+.menu-item__hidden-text{
+    display: none;
+    color: $white;
+    font-family: "ubunturegular";
+    font-size: .875rem;
+    padding: 3.75rem 1.875rem;
+    line-height: 1.8;
+}
+.current{
+    .menu-item__visible-title{
+        color: $yellow;
+    }
+    .menu-item__hidden{
+        width:550px;
+        @include tablets {
+            width:526px;
+        }
+        @include phones{
+            width: 336px;
+            
+        }
+        @include phones320{
+            width: 176px;
+            
+        }
+    }
+    .menu-item__hidden-text{
+        display: block;
+    }
+}

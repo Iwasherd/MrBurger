@@ -1,25 +1,75 @@
 .header{
     padding-top: 0.79%;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    @include tablets{
+        margin-left: 1%;
+    }
+    @include phones{
+        display: flex;
+        justify-content: space-between;
+
+    }
 }
-.greting-page{
+.greeting-page{
     background: url('../images/firstpage/video-bg.jpg');
     
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 650px;
+    min-height: rem(650px);
     height: 100vh;
-    min-width: 950px;
+    min-width: rem(950px);
     width: 100%;
+    .text__title{
+        font-weight: normal;
+        margin-bottom: rem(-48px);
+        margin-top: rem(71px);
+        @include tablets {
+            margin-top: -47px;
+            margin-bottom: 8%;
+
+        }
+        @include phones320{
+            font-size: 3.5rem;
+        }
+        
+    
+    }
+    @include tablets{
+        max-width: 768px;
+        min-height: 100vh;
+        min-width: auto;
+    }
+    @include phones{
+        max-width: 480px;
+        min-height: 100vh;
+        min-width: auto;
+    }
 }
+
+.header__logo{
+    margin-right: 19.9%;
+
+    @include phones{
+        margin-left: 4%;
+    }
+    
+}
+
 .navigation{
     display: flex;
-    margin-left: 20.2%;
-    margin-top: 0.9%;;
+    
+    margin-top: rem(12px);
+    @include tablets{
+        display: none;
+    }
+    @include phones{
+        display: none;
+    }
 }
 .navigation__list{
     display: flex;
-    color: wheat;
+    color: $white;
     flex: 1 1 auto;
     
     margin-right: -4%;
@@ -29,14 +79,18 @@
     padding-right: 2.307em;
     padding-left: 0.384em;
     font-family: 'ubuntumedium';
-    font-size: 13px;
+    font-size: rem(13px);
+    &:hover{
+        text-decoration: underline;
+    }
     
     
 }
 
 .navigation__link{
     text-decoration: none;
-    color: #ecedeb;
+    color: $white;
+    text-transform: uppercase;
 }
 .navigation__item:nth-child(1){
     list-style: none;
@@ -46,7 +100,15 @@
 .order{
     align-items: center;
     justify-content: center;
-    margin-top: 1.8%;
+    margin-top: rem(19px);
+    @include tablets {
+        margin-right: 9%;
+    }
+    @include phones320 {
+        margin-right: 14%;
+    }
+
+    
     
 
 }
@@ -54,7 +116,8 @@
     color:#ffffff;
     text-decoration: none;
     font-family: 'ubuntumedium';
-    font-size: 13px;
+    font-size: rem(13px);
+    text-transform: uppercase;
 
 
 }
@@ -74,46 +137,81 @@
         }
 }
 
-.greting{
+.greeting{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 72%;
+    width: 100%;
+    @include tablets{
+        flex-direction: column;
+        height: 84%;
+        width: 100%;
+    }
+    @include phones320{
+        width: 326px;
+    }
 }
-.burger-block__img{
-    margin-top: -15%;
-    margin-left: 3%;
+.greeting__img{
+    width: 100%;
 }
-.greting__burger-block{
-    background: url(../images/firstpage/drops.png) no-repeat;
-    margin-left: 2%;
-    width: 457px;
-    height: 360px;
+.greeting__img-block{
+    
+    margin-right: 1.725rem;
+    width: 50%;
+    height: rem(360px);
     padding-left: 2%;
     flex: 1 0 auto;
     display: flex;
     align-items: center;
+    @include tablets{
+        width: 450px;
+        height: 56%;
+        margin-right: -11px;
+
+    }
+    @include phones {
+    width: 355px;
+    height: 65%;
+    }
+    @include phones320{
+        margin-right: 26px;
+        width: 332px;
+    }
+    
     
 }
-.greting__text{
+.greeting__text{
     margin-left: -1%;
     align-items: center;
-    flex: 1 1 auto;;
+    flex: 1 1 auto;
+    @include tablets {
+        text-align: center;
+    }
+    
 }
+
 .text__title{
     font-family: 'gagalinregular';
-    font-size: 69px;
-    color: $yellow;
-    letter-spacing: 0.029em;
-    margin-bottom: -48px;
-    margin-top: 71px;
+    font-size: 4.5rem;
+    
+    text-transform: uppercase;
 
 }
+
 .text__item{
     font-family: 'lifehackmedium';
-    font-size: 62px;
+    font-size: rem(62px);
     color: #ffffff;
     line-height: 1em;
+    @include tablets {
+        width: 99%;
+        margin-top: -6%;
+    }
+    @include phones320{
+        font-size: 2.875rem;
+    }
+    
 
 }
 .arrow{
@@ -122,12 +220,20 @@
 }
 
 .arrow__link{
-    background: url(../images/firstpage/arrow-scroll.png);
+    background: url(../images/icons/arrow-scroll.svg);
     background-repeat: no-repeat;
     height: 15px;
     width: 30px;
     margin-top: 4.4%;
-    margin-right: -7px;
+    margin-right: rem(-7px);
+    &:hover{
+        transition: .5s;
+        transform: scale(3) translate3d(0,0,0);
+        @include shadow(1);
     
-    
+    }
+    @include phones {
+        margin-right: -4%;
+        margin-top: -2.9%;
+    }
 }

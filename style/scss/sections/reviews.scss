@@ -1,83 +1,125 @@
-
-.container--reviews{
-    min-height: 650px;
+.reviews{
     height: 100vh;
-    min-width: 950px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
 }
 
 .reviews__list {
-    width: 100%;
-    height: 100%;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-}
-
-.userpic-list__item{
-    list-style: none;
-    width: 25%;
-    min-width: 275px;
-    height: 50vh;
-    min-height: 325px;
-    margin: 0;
-    padding: 0;
-    filter: grayscale(100%);
-
-
-}
-
-.userpic-item__list{
-    list-style: none;
     width: 100%;
     height: 100%;
-    background: black;
-    opacity: 0;
+}
+
+.reviews__item{
+    margin: 0;
     padding: 0;
-    margin-top: -17.1%;
-    &:hover{
-        content: "";
-        opacity: 0.6;
-        transition: .5s;
+    width: 25%;
+    height: 50%;
+    @include tablets{
+        width: 50%;
+        height: 25%;
+    }
+    @include phones{
+        
     }
 }
 
-.content-name{
+.review{
+    width: 100%;
+    height: 100%;
+    position: relative;
+        
+
+}
+
+.review__photo{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    filter: grayscale(100%);
+    background-position: 50%;
+    background-size: cover;
+
+
+}
+
+.review__hover-content{
+
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background:rgba(0, 0, 0, 0.6);
+    padding: 0;
+    transform: scale(0.8);
+    z-index: 9999;
+    &:hover{
+        content: "";
+        opacity: 1;
+        transition: .5s;
+        transform: scale(1);
+    }
+    @include tablets{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include phones{
+        
+    }
+}
+
+.review__name{
     font-family: 'gagalinregular';
-    font-size: 14px;
+    font-size: rem(14px);
     display: flex;
     color: $white;
-    padding-top: 47px;
-    margin-left: 19px;
+    padding-top: rem(47px);
+    margin-left: rem(19px);
     margin-top: 17.1%;
+    text-transform: uppercase;
+    @include tablets{
+        margin-top: 4%;
+        padding-top: 0;
+        margin-left: 0;
+    }
+    @include phones{
+        margin-top: 32%;
+        padding-top: 0;
+        margin-left: 0;
+        margin-bottom: 12%;
+    }
 }
-.content-text{
+.review__text{
     font-family: "ubunturegular";
     width: 85%;
-    font-size: 14px;
-    margin-left: 18px;
-    margin-top: 20px;
+    font-size: rem(14px);
+    margin-left: rem(18px);
+    margin-top: rem(20px);
     line-height: 1.74em;
     color: $white;
+    @include tablets{
+        margin-top: 4%;
+        margin-left: 0;
+    }
+    @include phones{
+        display: none;
+        
+    }
 
 }
 
-.content-button{
-    width: 110px;
-    height: 35px;
-    border-radius: 3px;
-    background-color: $dark;
+.review__button{
+    cursor: pointer;
     margin-left: 7%;
-    margin-top: 4%; 
-}
-
-.content-button__link{
-    width: 110px;
-    height: 35px;
+    margin-top: 4%;
+    width: rem(110px);
+    height: rem(35px);
     border-radius: 5px;
     background-color: $dark;
     color: $white;
@@ -91,4 +133,7 @@
             color: $white;
             
         }
+    @include phones{
+        margin-left: 0;
+    }
 }
