@@ -236,4 +236,8 @@
         margin-right: -4%;
         margin-top: -2.9%;
     }
+    @include phones320 {
+        margin-right: -4%;
+        margin-top: -5%;
+    }
 }

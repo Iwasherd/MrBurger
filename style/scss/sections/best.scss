@@ -43,6 +43,7 @@
         display: flex;
         @include phones{
                 flex-direction: column;
+                padding: 0;
         }
 }
 
@@ -54,6 +55,7 @@
         width: 33vw;
         @include phones {
                 width: 100%;
+                margin-bottom: 5%;
         }
         .best__icon{
                 fill: $orange;
@@ -74,6 +76,7 @@
         width: 33vw;
         @include phones {
                 width: 100%;
+                margin-bottom: 5%;
         }
         .best__icon{
                 fill: $yellow;
@@ -93,6 +96,7 @@
         width: 33vw;
         @include phones {
                 width: 100%;
+                
         }
         .best__icon{
                 fill: #99cc66;
