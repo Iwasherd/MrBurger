@@ -20,6 +20,9 @@
         margin-left: rem(36px);
         @include tablets {
             margin-left: 0;
+            margin-bottom: 2%;
+            margin-top: 0;
+            font-size: 3.8rem;
             
         }
         @include phones {
@@ -40,9 +43,10 @@
     align-items: center;
 }
 
-.delivery__form-block{
+.delivery__form-container{
     display: flex;
     padding: 0 rem(62px);
+    
   
     @include tablets {
       flex-direction: column;
@@ -52,16 +56,17 @@
 }
   
 .delivery__form-col {
-    width: 50%;
+    width: 45%;
     flex: 1;
     margin-top: rem(12px);
+    
   
     @include tablets {
       width: 70%;
       margin-left: 0;
     }
-    @include tablets {
-        width: 100%;
+    @include phones {
+        width: 95%;
         margin-left: 0;
       }
 }
@@ -70,6 +75,10 @@
     width: 100%;
     margin-bottom: rem(15px);
     display: flex;
+    @include phones {
+        width: auto;
+        margin-left: 0;
+      }
 }
 .delivery__form-name{
     font-family: 'ubunturegular';
@@ -113,7 +122,10 @@
         padding-left: rem(21px);
         padding-top: rem(12px);
         @include phones {
-            margin-left: 9%;
+            margin-left: 20%;
+        }
+        @include phones320 {
+            margin-left: 10%;
         }
 }
   
@@ -126,8 +138,8 @@
     align-items: center;
     @include phones{
         margin-right: 1rem;
-        margin-bottom: 8%;
-        margin-top: 11%
+        margin-bottom: 4%;
+        margin-top: 3%
     }
     @include phones320{
         margin-right: 1rem;
@@ -234,6 +246,7 @@
     cursor: pointer;
     &:first-child:hover{
         background: darken($color: $orange, $amount: 10%);
+        transition: .5s;
     }
     &:last-child:hover{
         text-decoration: underline;
