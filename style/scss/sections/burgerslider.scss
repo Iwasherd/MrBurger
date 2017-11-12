@@ -1,0 +1,249 @@
+.burger-slider{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg,#f9b43b 0,#eb8c38 40%,#eb8c38 60%,#eb8c38 0,#f9b43b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.container-bugrer{
+    width: 95%;
+    height: 55%;
+
+}
+.slider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+// slider arrow
+
+.slider__arrow{
+    align-items: center;
+    display: flex;
+    
+}
+.slider-left__arrow-icon{
+    fill: $white;
+    width: 16px;
+    height: 30px;
+    transform: rotate(90deg);
+}
+.slider-right__arrow-icon{
+    fill: $white;
+    width: 16px;
+    height: 30px;
+    transform: rotate(-90deg);
+}
+
+// slider left-part
+
+.slider__left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.slider__img{
+    width: 454px;
+    height: 319px;
+}
+.slider-left__upper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 94px;
+    height: 94px;
+    background-color: #ff9933;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor:pointer;
+    &:hover{
+        background-color: $orange;
+        transition: .5s;
+
+            &+.ingridients{
+                transition: .5s;
+                width: 270px;
+                height: 331px;
+                overflow: initial;
+                    .ingridients__item{
+                        transition: 1.6s;
+                        opacity: 1;
+
+                    } 
+            }
+    }
+}
+.slider-left__upper-icon{
+    width: 48px;
+    height: 43px;
+    fill: $white;
+}
+.slider-left__upper-text{
+    font-family: 'gagalinregular';
+    font-size: 12px;
+    color: $white;
+    margin: 0;
+    padding: 0;
+}
+
+.ingridients {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: $white;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 94px;
+    margin: 0;
+    padding: 15px 0 0 0;
+    
+}
+    
+.ingridients__item {
+      opacity: 0;  
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      &:first-child{
+          .ingridients__img{
+              fill: $orange;
+          }
+      }
+      &:nth-child(2){
+          .ingridients__img{
+              fill: $yellow;
+          }
+      }
+      &:nth-child(3){
+        .ingridients__img{
+            fill: #99cc33;
+        }
+    }
+    &:nth-child(4){
+        .ingridients__img{
+            fill: $orange;
+        }
+    }
+    &:nth-child(5){
+        .ingridients__img{
+            fill: #99cc33;
+        }
+    }
+    &:last-child{
+        .ingridients__img{
+            fill: $yellow;
+        }
+    }
+    
+}
+    
+.ingridients__img {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px
+
+    
+}
+
+
+
+.ingridients__title {
+      width: 30%;
+}
+.ingridients__weight{
+    margin-right: 16px;
+}
+
+.slider-left__bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.slider-left__bottom-icon{
+    width: 63px;
+    height: 62px;
+    fill: $white;
+    opacity: 0.4;
+    position: relative;
+}
+
+.slider-left__bottom-text{
+    position: absolute;
+    top: 8px;
+    text-align: center;
+    font-family: 'gagalinregular';
+    font-size: 16px;
+    color: $white;
+    line-height: 32px;
+    opacity: 0.4;
+
+}
+
+
+// slider right-part
+
+.slider__right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .text__title{
+        line-height: 94%;
+        margin: 0;
+        opacity: 0.8;
+    }
+    
+}
+
+.slider-right__text-block{
+    margin-top: 1%;
+}
+.slider-right__text{
+    font-family: "ubuntulight";
+    font-size: .875rem;
+    color: $white;
+    line-height: 1.8;
+}
+
+.slider-right__order{
+    display: flex;
+    
+}
+.slider-right__price{
+    display: flex;
+    align-items: baseline;
+    margin-right: 8%;
+    
+}
+.slider-right__price-num{
+    font-family: "gagalinregular";
+    font-size: 50px;
+    color: $orange;
+    margin: 0 7px 0 0;
+
+
+}
+.slider-right__price-letter{
+    font-family: "gagalinregular";
+    font-size: 20px;
+    color: $orange;
+    margin: 0;
+    vertical-align: bottom;
+}

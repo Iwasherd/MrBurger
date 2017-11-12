@@ -29,9 +29,11 @@
             margin-bottom: 8%;
 
         }
-        @include phones320{
+        @include phones{
             font-size: 3.5rem;
+            margin-top: -6px
         }
+        
         
     
     }
@@ -49,9 +51,11 @@
 
 .header__logo{
     margin-right: 19.9%;
+    z-index: 9999;
 
     @include phones{
         margin-left: 4%;
+        margin-right: 0;
     }
     
 }
@@ -97,20 +101,19 @@
     padding-left: 0;
     
 }
+
+//ORDER
+
 .order{
     align-items: center;
     justify-content: center;
     margin-top: rem(19px);
     @include tablets {
-        margin-right: 9%;
+        margin-right: -22%;
     }
     @include phones320 {
-        margin-right: 14%;
+        margin-right: -13%;
     }
-
-    
-    
-
 }
 .order__link{
     color:#ffffff;
@@ -136,6 +139,149 @@
             @include shadow(1);
         }
 }
+
+    //style hamburger - fullscreen menu
+
+.header__menu {
+    flex: 1;
+    text-align: right;
+    margin-right: rem(20px);
+    display: none;
+    
+  
+    @include tablets {
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      padding: 80px 5% 0;
+      z-index: 3;
+      overflow: auto;
+      /* visibility: hidden; */
+      display: none;
+      text-align: center;
+      
+      
+    }
+  
+    &_show {
+      
+      @include tablets {
+        display: block;
+        background-color: rgba(47, 50, 53, 0.97);
+        
+      }
+    }
+}
+
+
+.header__menu-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 17%;
+    padding: 0;
+    
+}
+
+
+.header__menu-item{
+
+
+    &:last-child{
+        .header__menu-link:after{
+            display: none;
+        }
+    }
+
+    
+
+}
+
+.header__menu-link{
+    text-decoration: none;
+    color: $white;
+    font-family: "ubunturegular";
+    font-size: rem(24px);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+        &:after{
+            content: '';
+            width: rem(7px);
+            height: rem(7px);
+            background-color: $white;
+            border-radius: 50%;
+            display: block;
+            margin: 5% auto;
+        }
+        &:hover{
+            text-decoration: underline;
+        }
+    
+
+}
+
+
+
+  
+  //style hamburger menu
+.hamburger {
+    position: absolute;
+    display: none;
+    width: $hamburger-width;
+    height: $hamburger-height;
+    z-index: 999;
+    cursor: pointer;
+  
+    @include tablets {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      margin-right: 8%;
+      margin-top: 1.1875rem;
+    }
+    @include phones {
+        margin-right: 4%;
+    }
+}
+  
+.hamburger__line {
+    width: 100%;
+    height: 4px;
+    margin: 0 0 6px 0;
+    background: $hamburger-bg-color ;
+    border-radius: $hamburger-border-radius;
+    transition:  transform 0.3s, opacity 0.1s;
+    &:last-child {
+      margin-bottom: 0;
+    }
+}
+  
+.hamburger__line_hide-js {
+    opacity: 0;
+    transform:  translateX(-42px);
+}
+  
+.hamburger__line_top-js {
+    position: absolute;
+    top: 0;
+    transform: rotate(45deg) translateY(17px);
+}
+  
+.hamburger__line_bottom-js {
+    position: absolute;
+    bottom: 4px;
+    transform: rotate(-45deg) translateY(-17px);
+}
+
+
 
 .greeting{
     display: flex;
@@ -171,8 +317,9 @@
 
     }
     @include phones {
-    width: 355px;
-    height: 65%;
+        width: 315px;
+        
+        height: 65%;
     }
     @include phones320{
         margin-right: 26px;
@@ -188,16 +335,15 @@
     @include tablets {
         text-align: center;
     }
-    
+    @include phones{
+        margin-left: 6%;
+    }
+    @include phones{
+        margin-left: 0;
+    }
 }
 
-.text__title{
-    font-family: 'gagalinregular';
-    font-size: 4.5rem;
-    
-    text-transform: uppercase;
 
-}
 
 .text__item{
     font-family: 'lifehackmedium';
@@ -208,9 +354,10 @@
         width: 99%;
         margin-top: -6%;
     }
-    @include phones320{
+    @include phones{
         font-size: 2.875rem;
     }
+    
     
 
 }
@@ -234,10 +381,7 @@
     }
     @include phones {
         margin-right: -4%;
-        margin-top: -2.9%;
-    }
-    @include phones320 {
-        margin-right: -4%;
         margin-top: -5%;
     }
+    
 }

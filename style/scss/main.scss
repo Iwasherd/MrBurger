@@ -1,5 +1,12 @@
 
+// normalize 
+@import "normalize";
+
 @import "config/media";// adaptive
+
+
+/*mixins */
+@import "config/variables";
 
 //resolutions
 $tablets: 768px;
@@ -9,8 +16,7 @@ $phones: 480px;
 @import "layout/fonts";
 @import "layout/base";
 
-/*mixins */
-@import "config/variables";
+
 
 /*sections */
 @import "sections/greting";

@@ -48,6 +48,33 @@ function init(){
 }
 
 
-//
+//Humburger
 
+(function () {
+    
+ var fullscreenmenu = document.querySelector(".header__menu");
+    
+    var strokes = document.querySelectorAll(".hamburger__line"),
+        icon = document.querySelector(".hamburger"),
+        fullscreenmenu = document.querySelector(".header__menu");
+        
+  
+    function transformStart() {
 
+        strokes[0].classList.toggle("hamburger__line_top-js")
+        strokes[1].classList.toggle("hamburger__line_hide-js");
+        strokes[2].classList.toggle("hamburger__line_bottom-js");
+        fullscreenmenu.classList.toggle("header__menu_show");
+    }
+    
+    icon.addEventListener("click", transformStart);
+    
+    var link = document.querySelectorAll(".header__menu-link")
+
+        for (var i = 0; i < link.length; i++) {
+
+            link[i].addEventListener("click", transformStart);   
+        }
+    
+
+})();

@@ -9,3 +9,8 @@ $white: #ffffff;
     box-shadow: 0 0 ($depth * 8px) 0 rgba(0,0,0,0.2),
     ($depth * 2px) ($depth * 4px) ($depth * 4px) 0 rgba(0,0,0,0.25);
 }
+
+$hamburger-width: 24px;
+$hamburger-height: 31px;
+$hamburger-bg-color: &white;
+$hamburger-border-radius: 5px;
