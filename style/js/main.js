@@ -69,6 +69,7 @@ function init(){
     
     icon.addEventListener("click", transformStart);
     
+    
     var link = document.querySelectorAll(".header__menu-link")
 
         for (var i = 0; i < link.length; i++) {
@@ -78,3 +79,31 @@ function init(){
     
 
 })();
+
+
+//team accordeon
+
+
+
+
+
+   $('.team-accordeon__item').on('click' 
+   ,   function (){ 
+        $(this).prevAll().removeClass("active");
+        $(this).toggleClass("active");
+        $(this).nextAll().removeClass("active");
+        
+  });
+
+
+
+
+// menu accordeon
+
+    $('.menu-acc__item').on('click'
+    ,   function(){
+        $(this).prevAll().removeClass("current");
+        $(this).toggleClass("current");
+        $(this).nextAll().removeClass("current");
+
+    });
