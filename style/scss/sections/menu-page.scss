@@ -6,7 +6,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
-        .text__title{
+        .title{
             margin-left: 6.2rem;
             margin-top: 5.7rem;
             font-weight: normal;
@@ -30,6 +30,7 @@
 .menu-acc__item{
     min-height: rem(650px);
     height: 100vh;
+   
 }
 
 .menu-item__visible{
@@ -81,41 +82,49 @@
 }
 
 .menu-item__hidden{
-    height: 100%;
+    height: 100vh;
+    width: 0;
     float: left;
     background: rgba(47,50,52,.93);
-
+    transition: .7s;
     overflow: hidden;
+    
     
 
 }
 .menu-item__hidden-text{
-    display: none;
-    color: $white;
+   
+    opacity: 0;
+    color: transparent;
     font-family: "ubunturegular";
     font-size: .875rem;
     padding: 3.75rem 1.875rem;
     line-height: 1.8;
+    
 }
 .current{
+    
     .menu-item__visible-title{
         color: $yellow;
     }
     .menu-item__hidden{
         width:550px;
+        height: 100%;
+        
         @include tablets {
-            width:526px;
+            width: calc(90vw - 192px);
         }
         @include phones{
-            width: 336px;
+            width: calc(100vw - 144px);
             
         }
-        @include phones320{
-            width: 176px;
-            
-        }
+        
     }
     .menu-item__hidden-text{
-        display: block;
+        transition: 4.6s;
+        color: $white;
+        opacity: 1;
+        
+        
     }
 }

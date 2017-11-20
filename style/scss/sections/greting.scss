@@ -18,15 +18,14 @@
     background-repeat: no-repeat;
     min-height: rem(650px);
     height: 100vh;
-    min-width: rem(950px);
     width: 100%;
-    .text__title{
+    .title{
         font-weight: normal;
         margin-bottom: rem(-48px);
         margin-top: rem(71px);
         @include tablets {
-            margin-top: -47px;
-            margin-bottom: 8%;
+            margin-top: 1%;
+            margin-bottom: 3%;
 
         }
         @include phones{
@@ -75,8 +74,7 @@
     display: flex;
     color: $white;
     flex: 1 1 auto;
-    
-    margin-right: -4%;
+    padding: 0;
     flex-wrap: wrap;
 }
 .navigation__item{
@@ -84,17 +82,15 @@
     padding-left: 0.384em;
     font-family: 'ubuntumedium';
     font-size: rem(13px);
-    &:hover{
-        text-decoration: underline;
-    }
-    
-    
 }
 
 .navigation__link{
     text-decoration: none;
     color: $white;
     text-transform: uppercase;
+    &:hover{
+        text-decoration: underline;
+    }
 }
 .navigation__item:nth-child(1){
     list-style: none;
@@ -205,11 +201,12 @@
     text-decoration: none;
     color: $white;
     font-family: "ubunturegular";
-    font-size: rem(24px);
+    font-size: rem(16px);
     text-transform: uppercase;
     display: flex;
     align-items: center;
     flex-direction: column;
+    display: inline;
     
         &:after{
             content: '';
@@ -289,6 +286,7 @@
     align-items: center;
     height: 72%;
     width: 100%;
+    
     @include tablets{
         flex-direction: column;
         height: 84%;
@@ -299,7 +297,12 @@
     }
 }
 .greeting__img{
-    width: 100%;
+    width: 500px;
+    @include tablets{
+        width: 90%;
+    }
+    @include phones320{
+    }
 }
 .greeting__img-block{
     
@@ -310,10 +313,11 @@
     flex: 1 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     @include tablets{
         width: 450px;
         height: 56%;
-        margin-right: -11px;
+       
 
     }
     @include phones {
@@ -378,6 +382,9 @@
         transform: scale(3) translate3d(0,0,0);
         @include shadow(1);
     
+    }
+    @include tablets {
+        margin-top: -3.6%;
     }
     @include phones {
         margin-right: -4%;

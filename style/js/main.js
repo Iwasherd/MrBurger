@@ -52,30 +52,28 @@ function init(){
 
 (function () {
     
- var fullscreenmenu = document.querySelector(".header__menu");
+ var fullscreenmenu = $(".header__menu");
     
-    var strokes = document.querySelectorAll(".hamburger__line"),
-        icon = document.querySelector(".hamburger"),
-        fullscreenmenu = document.querySelector(".header__menu");
+    var strokes = $(".hamburger__line"),
+        icon = $(".hamburger"),
+        fullscreenmenu = $(".header__menu");
         
   
     function transformStart() {
 
-        strokes[0].classList.toggle("hamburger__line_top-js")
-        strokes[1].classList.toggle("hamburger__line_hide-js");
-        strokes[2].classList.toggle("hamburger__line_bottom-js");
-        fullscreenmenu.classList.toggle("header__menu_show");
+        strokes.eq(0).toggleClass("hamburger__line_top-js");
+        strokes.eq(1).toggleClass("hamburger__line_hide-js");
+        strokes.eq(2).toggleClass("hamburger__line_bottom-js");
+        fullscreenmenu.toggleClass("header__menu_show");
     }
     
-    icon.addEventListener("click", transformStart);
+    icon.on("click", transformStart);
     
     
-    var link = document.querySelectorAll(".header__menu-link")
+    var link = $(".header__menu-link")
 
-        for (var i = 0; i < link.length; i++) {
-
-            link[i].addEventListener("click", transformStart);   
-        }
+            link.on("click", transformStart);   
+        
     
 
 })();
@@ -86,24 +84,103 @@ function init(){
 
 
 
+$(function(){
+   $('.team-accordeon__item').on('click' ,   e => { 
+    
+        const $this = $(e.currentTarget);
 
-   $('.team-accordeon__item').on('click' 
-   ,   function (){ 
-        $(this).prevAll().removeClass("active");
-        $(this).toggleClass("active");
-        $(this).nextAll().removeClass("active");
-        
+        $this.toggleClass("active").siblings().removeClass("active");
   });
-
+});
 
 
 
 // menu accordeon
-
+  
+$(function(){
     $('.menu-acc__item').on('click'
-    ,   function(){
-        $(this).prevAll().removeClass("current");
-        $(this).toggleClass("current");
-        $(this).nextAll().removeClass("current");
+    ,   e =>{
 
+        const $this = $(e.currentTarget);
+        e.preventDefault()
+
+        $this.toggleClass("current").siblings().removeClass("current");  
+        
+       
     });
+    
+});
+
+//$(function(){
+   
+
+    
+//});   
+
+
+    //slider
+    /*
+$(function() {
+
+    var moveSlide = function (container , slideNum) {
+            var 
+                items = container.find('.slider__item'),
+                activeSlide = items.filter('.active-slide'),
+                reqItem = items.eq(slideNum),
+                reqIndex = reqItem.index(),
+                list = container.find('.slider__list'),
+                duration = 1000;
+    
+            if (reqItem.length) {
+                list.animate({
+                    'left': -reqIndex *100 +'%'
+                
+                }, duration, function () {
+                    activeSlide.removeClass('active-slide');
+                    reqItem.addClass('active-slide');
+                });
+            };
+        }; 
+   
+    
+    $('.slider-arrow__link').on('click' , function(e){
+        e.preventDefault(); 
+
+        var $this = $(this);
+            container = $this.parents().siblings('.slider'),
+            items = container.find('.slider__item'),
+            activeItem = items.filter('.active'),
+            nextItem = activeItem.next(),
+            prevItem = activeItem.prev();
+
+        if($this.hasClass('arrow-right-link')){
+            if(nextItem.length){
+                moveSlide(container , nextItem.index())
+            } else {
+                moveSlide(container , items.first().index())
+            }
+
+        } else {
+            if(prevItem.length){
+                moveSlide(container , prevItem.index())
+            } else {
+                moveSlide(container , items.last().index())
+            }
+        }
+        
+        
+    });
+});
+*/
+
+
+// slick slider
+
+    $('.slider__list').slick({
+        prevArrow: $('.prev'),
+        nextArrow: $('.next'),
+     });
+
+
+// 
+

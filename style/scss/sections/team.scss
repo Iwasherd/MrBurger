@@ -5,10 +5,12 @@
     min-width: rem(950px);
     width: 100%;
     background-size: cover;
-    .text__title{
+    .title{
         font-weight: normal;
         @include tablets{
-            text-align: center
+            text-align: center;
+             margin-top: 5%;
+            margin-bottom: 2%;
             
         }
         @include phones{
@@ -73,6 +75,8 @@
 
 }
 .team-accordeon__list{
+    margin: 0;
+    padding: 0;
     margin-top: 1%;
     padding-left: 4%;;
     list-style: none;
@@ -83,6 +87,19 @@
         text-align: center;
     }
 }
+
+.team-accordeon__item{
+    
+    @include tablets {
+        transition: .7s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: inline;
+        }
+}
+
 .accordeon-item__visible{
     position: relative;
     cursor: pointer;
@@ -131,6 +148,12 @@
 }
 
 .active{
+    transition: .7s;
+    .team-accordeon__item{
+        @include tablets {
+            display: flex;
+        }
+    }
     .team-visible__content{
         font-family: gagalinregular;
         font-size: rem(14px);
@@ -163,29 +186,51 @@
             }
     }
     .accordeon-item__hidden{
-        display: flex;
+        transition: 1s;
+        height: 30%;
         margin-top: -3%;
         margin-left: -1%;
         margin-bottom: 9%;
+            .team-hidden__photo{
+                transition: .7s;
+                height: rem(100px);
+                width: rem(100px);
+            }
+            .team-hidden__content-name{
+                transition: 2s;
+                opacity: 1;
+            }
+            .team-hidden__content-text{
+                transition: 2s;
+                opacity: 1;
+                
+            }
         @include tablets {
-            flex-direction: column;
-            align-items: center;
-            margin-left: 0;
+            transition: 1s;
+            height: 30%;
         }
-        @include phones{
-            
-        }
+        
+        
+
     }
 }
 .accordeon-item__hidden{
-    display: none;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
 }
 
 .team-hidden__photo{
     display: inline-block;
     position: relative;
-    width: rem(100px);
-    height: rem(100px);
+    width: 0;
+    height: 0;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 5%;
@@ -214,7 +259,11 @@
 }
 .team-hidden__content{
     width: 48%;
+    @include tablets {
+        width: 75%;
+    }
 }
+
 .team-hidden__content-name{
     font-family: 'ubuntubold';
     font-size: 14px;
@@ -234,5 +283,6 @@
     color: $white;
     margin-top: 15px;
     line-height: 1.7em;
+    opacity: 0;
 
 }
