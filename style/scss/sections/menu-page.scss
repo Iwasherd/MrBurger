@@ -2,10 +2,14 @@
     background: url('../images/menu/background.jpg') center center / cover;
     background-repeat: no-repeat;
     height: 100vh;
-    min-height: 40.625rem;
+    
     position: relative;
     display: flex;
     overflow: hidden;
+    .fp-tableCell{
+        display: block;
+        
+    }
         .title{
             margin-left: 6.2rem;
             margin-top: 5.7rem;
@@ -29,7 +33,7 @@
 
 .menu-acc__item{
     min-height: rem(650px);
-    height: 100vh;
+    height: 100%;
    
 }
 

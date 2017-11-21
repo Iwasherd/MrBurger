@@ -4,7 +4,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
-        min-height: 40.625rem;
+        
         position: relative;
         display: flex;
         align-items: center;
@@ -38,7 +38,7 @@
         flex-direction: column;
 
 }
-    
+
 .best__list{
         display: flex;
         margin: 0;
@@ -58,16 +58,19 @@
         @include phones {
                 width: 100%;
                 margin-bottom: 5%;
+                flex-direction: row;
         }
         .best__icon{
                 fill: $orange;
                 width: 98px;
                 height: 88px;
-                
-        } 
                 @include phones {
-                        flex-direction: row;
+                        
+                        width: 64px;
+                        height: 56px;
                 }
+        } 
+                
         
 }
 .best__item:nth-child(2){
@@ -79,15 +82,20 @@
         @include phones {
                 width: 100%;
                 margin-bottom: 5%;
+                flex-direction: row;
         }
         .best__icon{
                 fill: $yellow;
                 width: 98px;
                 height: 88px;
-        } 
                 @include phones {
-                        flex-direction: row;
+                        
+                        width: 78px;
+                        height: 68px;
                 }
+        } 
+                
+                
         
 }
 .best__item:nth-child(3){
@@ -98,16 +106,20 @@
         width: 33vw;
         @include phones {
                 width: 100%;
+                flex-direction: row;
                 
         }
         .best__icon{
                 fill: #99cc66;
                 width: 98px;
                 height: 88px;
-        } 
                 @include phones {
-                        flex-direction: row;
+                        
+                        width: 78px;
+                        height: 68px;
                 }
+        } 
+                
         
 }
 
@@ -137,6 +149,9 @@
         text-align: center;
         line-height: rem(24px);
         font-style: normal;
+        @include phones320{
+                color: black;
+        }
         
         
     

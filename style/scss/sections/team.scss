@@ -2,9 +2,13 @@
     background: url('../images/team/background.jpg') no-repeat;
     min-height: rem(650px);
     height: 100vh;
-    min-width: rem(950px);
+    
     width: 100%;
     background-size: cover;
+    .fp-tableCell{
+        display: block;
+        
+    }
     .title{
         font-weight: normal;
         @include tablets{
@@ -147,7 +151,7 @@
         }
 }
 
-.active{
+.team-accordeon__item--active{
     transition: .7s;
     .team-accordeon__item{
         @include tablets {
@@ -187,10 +191,11 @@
     }
     .accordeon-item__hidden{
         transition: 1s;
-        height: 30%;
+        max-height: 30%;
         margin-top: -3%;
         margin-left: -1%;
         margin-bottom: 9%;
+        transform: scale(1);
             .team-hidden__photo{
                 transition: .7s;
                 height: rem(100px);
@@ -207,7 +212,8 @@
             }
         @include tablets {
             transition: 1s;
-            height: 30%;
+            max-height: 30%;
+            
         }
         
         
@@ -215,9 +221,10 @@
     }
 }
 .accordeon-item__hidden{
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     display: flex;
+    transform: scale(5);
     
     @include tablets {
         flex-direction: column;

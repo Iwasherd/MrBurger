@@ -1,5 +1,6 @@
 html{
     font-size: 16px;
+    overflow: hidden;
     
     @include tablets{
         font-size: 15px;
@@ -57,10 +58,16 @@ body{
 }
 
 .pagination__link{
-    position: relative;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: -6px;
+    z-index: 99999;
+    left: -6px;
 }
 
 .pagination__item{
+    position: relative;
     list-style: none;
     width: 6px;
     height: 6px;
@@ -123,3 +130,11 @@ body{
 .title_color-white{
     color: #ffffff;
 }
+
+.main-content{
+    height: 100%;
+    min-height: 650px;
+    transition: 1s;
+    will-change: transform;
+}
+

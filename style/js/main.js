@@ -52,11 +52,13 @@ function init(){
 
 (function () {
     
- var fullscreenmenu = $(".header__menu");
+ var fullScreenMenu = $(".header__menu");
     
     var strokes = $(".hamburger__line"),
         icon = $(".hamburger"),
-        fullscreenmenu = $(".header__menu");
+        fullScreenMenu = $(".header__menu");
+        link = $(".header__menu-link");
+        
         
   
     function transformStart() {
@@ -64,15 +66,22 @@ function init(){
         strokes.eq(0).toggleClass("hamburger__line_top-js");
         strokes.eq(1).toggleClass("hamburger__line_hide-js");
         strokes.eq(2).toggleClass("hamburger__line_bottom-js");
-        fullscreenmenu.toggleClass("header__menu_show");
+        fullScreenMenu.toggleClass("header__menu_show");
+        $.fn.fullpage.setAllowScrolling(false);
+        $.fn.fullpage.setKeyboardScrolling(false, 'down');
+        
     }
-    
-    icon.on("click", transformStart);
-    
-    
-    var link = $(".header__menu-link")
+    function transformEnd(){
+        strokes.eq(0).removeClass("hamburger__line_top-js");
+        strokes.eq(1).removeClass("hamburger__line_hide-js");
+        strokes.eq(2).removeClass("hamburger__line_bottom-js");
+        fullScreenMenu.removeClass("header__menu_show");
+        $.fn.fullpage.setAllowScrolling(true);
+        $.fn.fullpage.setKeyboardScrolling(true, 'down');
+    }
 
-            link.on("click", transformStart);   
+    icon.on("click", transformStart);
+    link.on("click", transformEnd);   
         
     
 
@@ -89,7 +98,7 @@ $(function(){
     
         const $this = $(e.currentTarget);
 
-        $this.toggleClass("active").siblings().removeClass("active");
+        $this.toggleClass("team-accordeon__item--active").siblings().removeClass("team-accordeon__item--active");
   });
 });
 
@@ -98,6 +107,7 @@ $(function(){
 // menu accordeon
   
 $(function(){
+
     $('.menu-acc__item').on('click'
     ,   e =>{
 
@@ -105,31 +115,33 @@ $(function(){
         e.preventDefault()
 
         $this.toggleClass("current").siblings().removeClass("current");  
-        
-       
+
     });
-    
 });
-
-//$(function(){
-   
-
-    
-//});   
+ 
+  
 
 
     //slider
     /*
 $(function() {
 
-    var moveSlide = function (container , slideNum) {
-            var 
-                items = container.find('.slider__item'),
+    let   list = $('.slider__list'),
+          sliderItemsCount = $('.slider__item').length;
+          sliderWidth = sliderItemsCount * 100 + "%";
+          setSliderWidth = function(element, width) {
+            $(element).css(width, sliderWidth);
+          }
+
+
+      moveSlide = function(container, slideNum) {
+            let items = $('.slider__item'),
                 activeSlide = items.filter('.active-slide'),
                 reqItem = items.eq(slideNum),
                 reqIndex = reqItem.index(),
-                list = container.find('.slider__list'),
-                duration = 1000;
+                duration = 500;
+      }
+
     
             if (reqItem.length) {
                 list.animate({
@@ -140,39 +152,36 @@ $(function() {
                     reqItem.addClass('active-slide');
                 });
             };
-        }; 
+     
    
     
     $('.slider-arrow__link').on('click' , function(e){
         e.preventDefault(); 
 
-        var $this = $(this);
+        let $this = $(this);
             container = $this.parents().siblings('.slider'),
             items = container.find('.slider__item'),
             activeItem = items.filter('.active'),
-            nextItem = activeItem.next(),
-            prevItem = activeItem.prev();
+            existedItem, edgeItem, reqItem;
 
         if($this.hasClass('arrow-right-link')){
-            if(nextItem.length){
-                moveSlide(container , nextItem.index())
-            } else {
-                moveSlide(container , items.first().index())
-            }
+            existedItem = activeItem.next();
+            edgeItem = items.first();
 
-        } else {
-            if(prevItem.length){
-                moveSlide(container , prevItem.index())
-            } else {
-                moveSlide(container , items.last().index())
-            }
+        }
+        if ($this.hasClass('arrow-left-link')){
+            existedItem = activeItem.prev(),
+            edgeItem = items.last();
         }
         
-        
+        reqItem = existedItem.length ? existedItem.index() : edgeItem.index();
+
+        moveSlide(container, reqItem);
+    
     });
 });
-*/
 
+*/
 
 // slick slider
 
@@ -182,5 +191,14 @@ $(function() {
      });
 
 
-// 
 
+ // full page scroll 
+ $(document).ready(function() {
+	$('.main-content').fullpage({
+        scrollingSpeed: 1100,
+        menu: '#menu',
+ //       anchors:['greeting-page', 'best', 'burgerslider', 'team', 'menu', 'reviews', 'delivery', 'map-page']
+        responsiveHeight: 100,
+
+    });
+});
