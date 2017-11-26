@@ -340,7 +340,7 @@ $('#delivery__form').on('submit', function(e) {
     }
     // Все поля заполнены
 
-    $.ajax('http://MrBurger/server.php', {
+    $.ajax('server.php', {
         type: "Post",
         data: $(this).serialize(),
         dataType: "Text",
