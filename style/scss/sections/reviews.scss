@@ -1,6 +1,8 @@
 .reviews{
     height: 100vh;
-    
+     .fp-tableCell{
+    position: relative;
+    }   
 }
 
 .reviews__list {
@@ -22,9 +24,28 @@
         width: 50%;
         height: 25%;
     }
-    @include phones{
-        
+    @include tablets{
+        .review__hover-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:active{
+            content: '';
+            opacity: 1;
+            transition: .5s;
+            transform: scale(1);
+        }
+         }
     }
+    &:hover{
+        .review__hover-content{
+        content: "";
+        opacity: 1;
+        transition: .5s;
+        transform: scale(1);
+        }
+    }
+
 }
 
 .review{
@@ -59,24 +80,9 @@
     padding: 0;
     transform: scale(0.8);
     z-index: 9999;
-    @include tablets{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        &:active{
-            content: '';
-            opacity: 1;
-            transition: .5s;
-            transform: scale(1);
-        }
-    }
+    
 
-    &:hover{
-        content: "";
-        opacity: 1;
-        transition: .5s;
-        transform: scale(1);
-    }
+    
 }
 
 
@@ -148,4 +154,115 @@
     @include phones{
         margin-left: 0;
     }
+}
+
+
+.modal-window{
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(47,50,52,.92);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal-window__list{
+    background-color: #ffff;
+    border-radius: 5px;
+    height: auto;
+    width: 460px;
+    padding: 0;
+    @include phones{
+        width: 340px;
+    }@include phones320{
+        width: 260px;
+    }
+}
+
+.modal-window__item{
+    display: none;
+}
+
+.first{
+    display: flex;
+    .modal-window__item-first{
+        display: block;
+    }
+}
+.second{
+    display: flex;
+    .modal-window__item-second{
+        display: block;
+    }
+}
+.third{
+    display: flex;
+    .modal-window__item-third{
+        display: block;
+    }
+}
+.fourth{
+    display: flex;
+    .modal-window__item-fourth{
+        display: block;
+    }
+}
+.five{
+    display: flex;
+    .modal-window__item-five{
+        display: block;
+    }
+}
+.sixth{
+    display: flex;
+    .modal-window__item-sixth{
+        display: block;
+    }
+}
+.seventh{
+    display: flex;
+    .modal-window__item-seventh{
+        display: block;
+    }
+}
+.eighth{
+    display: flex;
+    .modal-window__item-eighth{
+        display: block;
+    }
+}
+
+
+.modal-window__box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 4%;
+}
+.modal-window__box-name{
+    font-family: 'gagalinregular';
+    font-size: rem(14px);
+    color: $dark;
+    margin-bottom: rem(14px);
+    text-transform: uppercase;
+    @include phones{
+        font-size: 14px;
+    }
+
+}
+.modal-window__box-content{
+    font-size: .875rem;
+    font-family: 'ubuntulight';
+    color: $dark;
+    @include phones{
+        font-size: 12px;
+    }
+}
+.modal-window__box-closeImg{
+    position: absolute;
+    top: 8%;
+    right: 3%;
+    cursor: pointer;
 }

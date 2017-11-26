@@ -14,6 +14,7 @@
             margin-left: 6.2rem;
             margin-top: 5.7rem;
             font-weight: normal;
+            position: absolute;
         }
 }
 
@@ -86,7 +87,7 @@
 }
 
 .menu-item__hidden{
-    height: 100vh;
+    height: 100%;
     width: 0;
     float: left;
     background: rgba(47,50,52,.93);

@@ -184,13 +184,13 @@ $(function() {
 */
 
 // slick slider
-
+$(function(){
     $('.slider__list').slick({
         prevArrow: $('.prev'),
         nextArrow: $('.next'),
      });
 
-
+})
 
  // full page scroll 
  $(document).ready(function() {
@@ -199,6 +199,154 @@ $(function() {
         menu: '#menu',
  //       anchors:['greeting-page', 'best', 'burgerslider', 'team', 'menu', 'reviews', 'delivery', 'map-page']
         responsiveHeight: 100,
+        
 
     });
 });
+        //pagination  
+ 
+
+// modal window section reviews
+
+$(function(){
+
+    let btn = $('.review__button'),
+        modal = $('.modal-window')
+        item = $('.modal-windiw__item'),
+        close = $('.modal-window__box-closeImg');
+     // закрытие по нажатию на крест 
+    close.on('click', e =>{
+        modal.removeClass('first'),
+        modal.removeClass('second'),
+        modal.removeClass('third'),
+        modal.removeClass('fourth'),
+        modal.removeClass('five'),
+        modal.removeClass('sixth'),
+        modal.removeClass('seventh'),
+        modal.removeClass('eighth');
+        $.fn.fullpage.setAllowScrolling(true);  // возобновление прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(true, 'down'); // возобновление скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(true, 'up'); // возобновление скролла клавишей "вверх"
+    })
+
+    btn.eq(0).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("first"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(1).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("second"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(2).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("third"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(3).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("fourth"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(4).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("five"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(5).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("sixth"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(6).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("seventh"),
+        $.fn.fullpage.setAllowScrolling(false), // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+    btn.eq(7).on("click", e =>{
+        e.preventDefault
+
+        modal.toggleClass("eighth"),
+        $.fn.fullpage.setAllowScrolling(false),    // запрет прокрутки мышью
+        $.fn.fullpage.setKeyboardScrolling(false, 'down'); // запрет скролла клавишей "вниз"
+        $.fn.fullpage.setKeyboardScrolling(false, 'up'); // запрет скролла клавишей "вверх"
+    })
+
+})
+
+
+// modal window delivery
+$(function(){
+    let btn = $('.delivery__form-button'),
+        modal = $('.delivery__modal'),
+        close = $('.delivery__modal-btn');
+
+        btn.eq(0).on('click', e =>{
+            e.preventDefault
+            modal.addClass('delivery__modal--active');
+            
+        })
+        close.on('click', e =>{
+            e.preventDefault
+            modal.removeClass('delivery__modal--active');
+            
+        })
+
+})
+
+// order
+
+
+$('#delivery__form').on('submit', function(e) {
+    e.preventDefault();
+    let checkForm = true;
+    if ($('delivery__form-input_name').value == '') { checkForm = false };
+    if ($('#delivery__form-input_phone').value == '') { checkForm = false };
+    if ($('#delivery__form-input_street').value == '') { checkForm = false };
+    if ($('#delivery__form-input_home').value == '') { checkForm = false };
+    if ($('#delivery__form-input_part').value == '') { checkForm = false };
+    if ($('#delivery__form-input_apart').value == '') { checkForm = false };
+    if ($('#delivery__form-input_floor').value == '') { checkForm = false };
+    if ($('#delivery__form-input_comment').value == '') { checkForm = false };
+    if (($('#cash')[0].checked === false) && ($('#card')[0].checked === false)) { checkForm = false };
+    // if ($('#payments2')[0].checked === false) { checkForm = false };
+    if ($('#callback')[0].checked === false) { checkForm = false };
+
+    if (checkForm == false) {
+    //    $('.delivery__modal').removeClass('delivery__modal--active')
+    //    return
+    }
+    // Все поля заполнены
+
+    $.ajax('.http//server.php', {
+        type: "Post",
+        data: $(this).serialize(),
+        dataType: "Text",
+        success: function(data) {
+            alert(data);
+        }
+
+    })
+})
