@@ -40,5 +40,15 @@
     "MIME-Version: 1.0" . "\r\n" .
     "Content-type: text/html; charset=UTF-8" . "\r\n";
     $mail = mail('washerd2008@gmail.com', 'Заказ с сайта', $mail_message, $headers);
+    $data = [];
+    if ($mail) {
+        $data['status'] = "OK";
+        $data['mes'] = "Письмо успешно отправлено";
+    }else{
+        $data['status'] = "NO";
+        $data['mes'] = "На сервере произошла ошибка";
+    }
+    echo json_encode($data);
+
     
 ?>
