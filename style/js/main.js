@@ -198,13 +198,17 @@ $(function(){
         scrollingSpeed: 1100,
         menu: '#menu',
  //       anchors:['greeting-page', 'best', 'burgerslider', 'team', 'menu', 'reviews', 'delivery', 'map-page']
-        responsiveHeight: 100,
+        responsiveHeight: 600,
+        navigation: true,
+        navigationPosition: 'right',
         
 
     });
+    
 });
         //pagination  
- 
+        
+        
 
 // modal window section reviews
 
